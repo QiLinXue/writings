@@ -1,5 +1,4 @@
 \usetikzlibrary{shapes,snakes}
-
 \newcommand{\KP}[1]{%
   \begin{tikzpicture}[baseline=-\dimexpr\fontdimen22\textfont2\relax]
   #1
@@ -38,6 +37,31 @@
             \strand [thick, red ] (2.5,0) circle (1.0cm);
         \end{knot}
     \end{tikzpicture}
+}
+
+\newcommand{\upcross}{
+  \begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)},vertex/.style={anchor=base,
+    circle,fill=black!25,minimum size=18pt,inner sep=2pt}]
+    \draw[color=gray,thick,->] (-0.3,-0.3) -- (0.3,0.3);
+    \draw[color=gray,thick] (0.3,-0.3) -- (0.05,-0.05);
+    \draw[color=gray,thick,->] (-0.05,0.05) -- (-0.3,0.3);
+  \end{tikzpicture}
+}
+
+\newcommand{\downcross}{
+  \begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)},vertex/.style={anchor=base,
+    circle,fill=black!25,minimum size=18pt,inner sep=2pt}]
+    \draw[color=gray,thick,<-] (-0.3,0.3) -- (0.3,-0.3);
+    \draw[color=gray,thick] (-0.3,-0.3) -- (-0.05,-0.05);
+    \draw[color=gray,thick,->] (0.05,0.05) -- (0.3,0.3);
+\end{tikzpicture}
+}
+
+\newcommand{\KPDArrow}{%
+  \KP{%
+    \draw[color=gray,thick,->] (-0.3,-0.3) .. controls (0.05,0) .. (-0.3,0.3);
+    \draw[color=gray,thick,->] (0.3,-0.3) .. controls (-0.05,0) .. (0.3,0.3);
+  }%
 }
 
 \newcommand{\kinkA}{\hspace{-2mm}

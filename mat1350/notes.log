@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.15)  8 NOV 2021 23:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.15)  9 NOV 2021 14:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -778,25 +778,74 @@ Package: spath3 2019/02/12 v1.2 Functions for manipulating PGF soft paths
 \l__knot_tolerance_dim=\dimen315
 \l__knot_clip_bg_radius_dim=\dimen316
 \l__knot_clip_draw_radius_dim=\dimen317
-) (/home/xueqilin/notes/mat1350/notes.aux)
+) (/home/xueqilin/notes/mat1350/mmacells.sty
+Package: mmacells 2017/01/03 v0.3.2 Mathematica front end cells
+ (/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2020/01/13 v3.5 verbatim text (tvz,hv)
+\FV@CodeLineNo=\count338
+\FV@InFile=\read5
+\FV@TabBox=\box95
+\c@FancyVerbLine=\count339
+\FV@StepNumber=\count340
+\FV@OutFile=\write6
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count341
+\lst@gtempboxa=\box96
+\lst@token=\toks50
+\lst@length=\count342
+\lst@currlwidth=\dimen318
+\lst@column=\count343
+\lst@pos=\count344
+\lst@lostspace=\dimen319
+\lst@width=\dimen320
+\lst@newlines=\count345
+\lst@lineno=\count346
+\lst@maxwidth=\dimen321
+ (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
+\c@lstnumber=\count347
+\lst@skipnumbers=\count348
+\lst@framebox=\box97
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2019/09/10 1.8c listings configuration
+))
+Package: listings 2019/09/10 1.8c (Carsten Heinz)
+\g_mmacells_index_int=\count349
+\g_mmacells_next_emph_class_int=\count350
+\l_mmacells_label_box=\box98
+\l_mmacells_leftmargin_dim=\dimen322
+\l_mmacells_label_dim=\dimen323
+\l_mmacells_label_sep_dim=\dimen324
+\l_mmacells_x_offset_dim=\dimen325
+\l_mmacells_y_offset_dim=\dimen326
+ (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
+\lstFV@gtempboxa=\box99
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2019/09/10 1.8c listings language file
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2019/09/10 1.8c listings language file
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2019/09/10 1.8c listings language file
+)) (/home/xueqilin/notes/mat1350/notes.aux)
 \openout1 = `notes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -834,25 +883,25 @@ LaTeX Font Info:    ... okay on input line 18.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count338
-\scratchdimen=\dimen318
-\scratchbox=\box95
-\nofMPsegments=\count339
-\nofMParguments=\count340
-\everyMPshowfont=\toks50
-\MPscratchCnt=\count341
-\MPscratchDim=\dimen319
-\MPnumerator=\count342
-\makeMPintoPDFobject=\count343
-\everyMPtoPDFconversion=\toks51
+\scratchcounter=\count351
+\scratchdimen=\dimen327
+\scratchbox=\box100
+\nofMPsegments=\count352
+\nofMParguments=\count353
+\everyMPshowfont=\toks51
+\MPscratchCnt=\count354
+\MPscratchDim=\dimen328
+\MPnumerator=\count355
+\makeMPintoPDFobject=\count356
+\everyMPtoPDFconversion=\toks52
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-\AtBeginShipoutBox=\box96
-Package hyperref Info: Link coloring ON on input line 18.
+\AtBeginShipoutBox=\box101
+Package hyperref Info: Link coloring ON on input line 20.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -860,53 +909,54 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count344
+\c@section@level=\count357
 )
-LaTeX Info: Redefining \ref on input line 18.
-LaTeX Info: Redefining \pageref on input line 18.
-LaTeX Info: Redefining \nameref on input line 18.
+LaTeX Info: Redefining \ref on input line 20.
+LaTeX Info: Redefining \pageref on input line 20.
+LaTeX Info: Redefining \nameref on input line 20.
  (/home/xueqilin/notes/mat1350/notes.out) (/home/xueqilin/notes/mat1350/notes.out)
-\@outlinefile=\write6
-\openout6 = `notes.out'.
+\@outlinefile=\write7
+\openout7 = `notes.out'.
 
  ABD: EveryShipout initializing macros
 Package pgfplots notification 'compat/show suggested version=true': you might benefit from \pgfplotsset{compat=1.16} (current compat level: 1.14).
 
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 21.
+\c@lstlisting=\count358
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 23.
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 21.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 23.
  (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 21.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 23.
  (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 21.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 23.
  (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 21.
+(Font)              <12> on input line 23.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 21.
+(Font)              <8> on input line 23.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 21.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 21.
+(Font)              <6> on input line 23.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 23.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 21.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 23.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 21.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 23.
  (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 21.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 23.
  (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd) (/home/xueqilin/notes/mat1350/notes.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 3.
@@ -915,66 +965,87 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 3.
 )
-\tf@toc=\write7
-\openout7 = `notes.toc'.
+\tf@toc=\write8
+\openout8 = `notes.toc'.
 
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<figures/perko.png, id=37, 614.295pt x 274.77657pt>
+<figures/perko.png, id=52, 614.295pt x 274.77657pt>
 File: figures/perko.png Graphic file (type png)
 <use figures/perko.png>
-Package pdftex.def Info: figures/perko.png  used on input line 47.
+Package pdftex.def Info: figures/perko.png  used on input line 49.
 (pdftex.def)             Requested size: 158.27264pt x 70.79453pt.
-<figures/reidemeister.jpg, id=39, 331.73938pt x 329.23pt>
+<figures/reidemeister.jpg, id=54, 331.73938pt x 329.23pt>
 File: figures/reidemeister.jpg Graphic file (type jpg)
 <use figures/reidemeister.jpg>
-Package pdftex.def Info: figures/reidemeister.jpg  used on input line 57.
+Package pdftex.def Info: figures/reidemeister.jpg  used on input line 59.
 (pdftex.def)             Requested size: 211.02483pt x 209.43047pt.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 67.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 69.
  (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [2 </home/xueqilin/notes/mat1350/figures/perko.png> </home/xueqilin/notes/mat1350/figures/reidemeister.jpg>]
-<figures/trefoil_3color.png, id=49, 215.30438pt x 188.95593pt>
+<figures/trefoil_3color.png, id=64, 215.30438pt x 188.95593pt>
 File: figures/trefoil_3color.png Graphic file (type png)
 <use figures/trefoil_3color.png>
-Package pdftex.def Info: figures/trefoil_3color.png  used on input line 81.
+Package pdftex.def Info: figures/trefoil_3color.png  used on input line 83.
 (pdftex.def)             Requested size: 105.5124pt x 92.60074pt.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 87.
-<figures/reidemeister_3coloring.png, id=50, 447.17062pt x 298.86656pt>
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 89.
+<figures/reidemeister_3coloring.png, id=65, 447.17062pt x 298.86656pt>
 File: figures/reidemeister_3coloring.png Graphic file (type png)
 <use figures/reidemeister_3coloring.png>
-Package pdftex.def Info: figures/reidemeister_3coloring.png  used on input line 89.
+Package pdftex.def Info: figures/reidemeister_3coloring.png  used on input line 91.
 (pdftex.def)             Requested size: 211.02483pt x 141.04189pt.
  [3 </home/xueqilin/notes/mat1350/figures/trefoil_3color.png> </home/xueqilin/notes/mat1350/figures/reidemeister_3coloring.png>]
-<figures/hopf_link_bracket.png, id=60, 895.09406pt x 530.73282pt>
+<figures/hopf_link_bracket.png, id=75, 895.09406pt x 530.73282pt>
 File: figures/hopf_link_bracket.png Graphic file (type png)
 <use figures/hopf_link_bracket.png>
-Package pdftex.def Info: figures/hopf_link_bracket.png  used on input line 131.
+Package pdftex.def Info: figures/hopf_link_bracket.png  used on input line 133.
 (pdftex.def)             Requested size: 263.78506pt x 156.41095pt.
- [4 </home/xueqilin/notes/mat1350/figures/hopf_link_bracket.png>] [5]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 188.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 188.
+ [4 </home/xueqilin/notes/mat1350/figures/hopf_link_bracket.png>] [5] [6]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 305.
+ (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 305.
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <7> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 310.
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <5> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 310.
+
+Overfull \hbox (21.12843pt too wide) in paragraph at lines 313--313
+[][][][][][]$[]$[][][][][][][][][]$[]$[]$[]$[][][][][] 
+ []
+
+
+Overfull \hbox (21.12843pt too wide) in paragraph at lines 322--322
+[][][][][]$[]$[][][][][][][][][]$[]$[]$[]$[][][][][] 
+ []
+
+[7]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 344.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 344.
  (/home/xueqilin/notes/mat1350/notes.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 188.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 188.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 344.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 344.
 Package rerunfilecheck Info: File `notes.out' has not changed.
-(rerunfilecheck)             Checksum: 72021C2FD70EF0DD7F8E2B1BB135DFA3;287.
+(rerunfilecheck)             Checksum: A605D76C5B41EB32EC07BB4806D795B2;479.
  ) 
 Here is how much of TeX's memory you used:
- 37562 strings out of 481239
- 904616 string characters out of 5920377
- 1332237 words of memory out of 5000000
- 52072 multiletter control sequences out of 15000+600000
- 611201 words of font info for 96 fonts, out of 8000000 for 9000
+ 42159 strings out of 481239
+ 978484 string characters out of 5920377
+ 1620495 words of memory out of 5000000
+ 56625 multiletter control sequences out of 15000+600000
+ 613116 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,12n,381p,997b,1176s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}</usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on /home/xueqilin/notes/mat1350/notes.pdf (5 pages, 884599 bytes).
+ 72i,14n,413p,997b,3376s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}</usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on /home/xueqilin/notes/mat1350/notes.pdf (7 pages, 976924 bytes).
 PDF statistics:
- 142 PDF objects out of 1000 (max. 8388607)
- 111 compressed objects within 2 object streams
- 22 named destinations out of 1000 (max. 500000)
- 70 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 185 PDF objects out of 1000 (max. 8388607)
+ 149 compressed objects within 2 object streams
+ 31 named destinations out of 1000 (max. 500000)
+ 94 words of extra memory for PDF output out of 10000 (max. 10000000)
 

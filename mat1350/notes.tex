@@ -13,6 +13,8 @@
 \usepackage{tikz}
 \usetikzlibrary{knots} 
 \usepgfmodule{decorations}
+\usepackage{mmacells}
+\mmaDefineMathReplacement[⧴]{:>}{:\hspace{-.2em}\to}[2]
 
 
 \begin{document}
@@ -107,7 +109,7 @@ Therefore, we wish to find a better way of doing things.
     We introduce the \emf{Kauffman bracket} $\langle D\rangle$ from two axioms:
     \begin{enumerate}
         %the first rule
-        \item $\left\langle\KPA D\right\rangle=d\langle D\rangle$
+        \item $\left\langle\KPA \sqcup D \right\rangle=d\langle D\rangle$
         
         \item $\left\langle\KPB\right\rangle=
         A\left\langle\KPD\right\rangle + B \left\langle \KPC \right\rangle$
@@ -185,4 +187,158 @@ Using this, we can define the \emf{writhe} of a knot diagram as
     We can show that the writhe is not affected by $R2$ and $R3$ moves by showing that for any arrows we draw, the writhe of the left hand and the right hand side are the same. In fact, this should be very easy to see even without drawing arrows.
 \end{proof}
 We now have two quantities that are \textit{almost} invariants. We will see in the next section how we can combine these two quantities to get an actual \textit{invariant} that will be more helpful.
+
+\newpage
+\section{The Jones Polynomial}
+We wish to add a factor such that it counts the number of kinks (and their orientations) such that when $\langle K\rangle$ has a factor of $(-A^{\pm 3})$, this factor has a factor of $(-A^{\mp 3})$. This is called the \emf{Jones Polynomial}.
+\begin{theorem}
+    The Jones Polynomial is an invariant. Let $K$ be a knot diagram. Then,
+    \begin{equation}
+        J(K) = (-A^3)^{-w(K)} \frac{\langle K\rangle}{d}
+    \end{equation}
+    where the $d$ comes from the fact that the numerator will always be divisible by $d$. The Jones Polynomial is a Laurent Polynomial.
+\end{theorem}
+It also turns out that factors of $A$ are a power of $4$, so we often make the substitution $A \to q^{-4}$. This leads to the Jones-Skein Relation 
+\begin{theorem}
+    The \emf{Jones-Skein Relation} is another way of computing the Jones Polynomial. 
+    \begin{equation}
+        q^{-1}J\left(\upcross\right)-qJ\left(\downcross\right) = (q^{1/2}-q^{-1/2})J\left(\KPDArrow\right)
+    \end{equation}
+    The idea is that every knot can be undone by flipping \emf{overcrossings} to \emf{undercrossings}, and the other way around.
+\end{theorem}
+We can change any knot into the unknot through a \emf{descending knot diagram.} For example, suppose we have the trefoil (left). We can change it into the unknot by flipping over one of the crossings such that the knot is always descending if we start from the top and move to the left. Therefore, we can imagine the right hand side as a projection.
+\begin{center}
+    \hspace{-10mm}
+    \begin{tikzpicture}
+        \begin{knot}[
+            clip width=10,
+            consider self intersections
+        ]
+            \strand[red,thick] (90:1)
+                \foreach \x in {1,2,3} {
+                    to [bend left=117,looseness=1.9] ({90+120*\x}:1)
+                }
+            ;
+            \flipcrossings{1, 3}
+        \end{knot}
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \begin{knot}[
+            clip width=10,
+            consider self intersections
+        ]
+            \strand[red,thick] (90:1)
+                \foreach \x in {1,2,3} {
+                    to [bend left=117,looseness=1.9] ({90+120*\x}:1)
+                }
+            ;
+            \flipcrossings{1,2,3}
+        \end{knot}
+    \end{tikzpicture}
+\end{center}\vspace{-6mm}
+Therefore, the Jones-Skein essentially tells us the ``cost'' of changing a crossing, i.e. there is a price to pay for changing a link into the disjoint union of unknots. This means we need to show that
+\begin{equation}
+    J\left(\KPA^k\right)=(-q^{1/2}-q^{-1/2})^k
+\end{equation}
+\subsection{PD-Notation}
+We go through a few definitions: An \emf{arc} goes undercrossings to undercrossings while an \emf{edge} goes from a crossing to a crossing. We can label the edges by starting at an arbitrary location and moving along it in one direction.
+\begin{center}
+    \begin{tikzpicture}[scale=2]
+        \begin{knot}[
+            clip width=10,
+            consider self intersections,
+        ]
+            \strand[red,thick] (90:1)
+                \foreach \x in {1,2,3} {
+                    to [bend left=117,looseness=1.9] ({90+120*\x}:1)
+                }
+            ;
+            \flipcrossings{2}
+        \end{knot}
+
+        % Add label at (0,1)
+        \node[] at (0,1) {$1$};
+        \node[] at (-0.5,-0.2) {$2$};
+        \node[] at (1,0) {$3$};
+        \node[] at (0,0.5) {$4$};
+        \node[] at (-1,0) {$5$};
+        \node[] at (0.5, -0.2) {$6$};
+
+        \node[] at (0.6, 0.3) {$X_1$};
+        \node[] at (-0.6, 0.3) {$X_2$};
+        \node[] at (0, -0.5) {$X_3$};
+
+    \end{tikzpicture}
+\end{center}\vspace{-6mm}
+We can label crossings by the four edges it is composed of. For example,
+\begin{center}
+    \begin{tikzpicture}
+        \draw[color=gray,thick,->] (-0.6,-0.6) node[left] {$\ell$} -- (0.6,0.6) node[right] {$j$};
+        \draw[color=gray,thick] (0.6,-0.6) node[right] {$i$} -- (0.1,-0.1);
+        \draw[color=gray,thick,->] (-0.1,0.1) -- (-0.6,0.6) node[left] {$k$};
+    \end{tikzpicture}
+\end{center}
+would be named $X_{ijk\ell}.$ If we label the crossings of the trefoil, we will have 
+\begin{equation}
+    X^+_{3146}\quad\quad X^+_{1524}\quad\quad X^+_{5362}
+\end{equation}
+Remember that we start from edge $1$ and travel counterclockwise. The $+$ exponent denotes that these crossings are positive.
+\begin{theorem}
+    This list of crossing information determines $D$ as a diagram on $S^2.$
+\end{theorem}
+The proof is left as an exercise.
+
+Similarly, when we apply smoothings to a crossing, we can label the corresponding edges by the two edges that are involved. For example applying the 0-smoothing and 1-smoothing,
+\begin{center}
+    \begin{tikzpicture}[scale=2]
+        \draw[color=gray,thick] (-0.3,-0.3) node[left]{$k$} .. controls (0.05,0) .. (-0.3,0.3) node[left] {$\ell$};
+        \draw[color=gray,thick] (0.3,-0.3) node[right] {$j$} .. controls (-0.05,0) .. (0.3,0.3) node[right] {$i$};
+    \end{tikzpicture}
+    \begin{tikzpicture}[scale=2]
+        \draw[color=gray,thick,] (-0.3,0.3) node[left] {$k$} .. controls (0,-0.05) .. (0.3,0.3) node[right] {$j$};
+        \draw[color=gray,thick,] (-0.3,-0.3) node[left] {$\ell$}.. controls (0,0.05) .. (0.3,-0.3) node[right] {$i$};
+    \end{tikzpicture}
+\end{center}
+we can label the edges as $P_{k\ell},P_{ij},P_{jk},P_{i\ell}$. We can treat this as an imaginary vertex in the middle of each edge, and these are ``names'' of each \emf{vertex}.
+\subsection{Applying it with Mathematica}
+We can define a trefoil knot diagram using
+\begin{mmaCell}{Input}
+    K = PD[Xp[3, 1, 4, 6], Xp[1, 5, 2, 5], Xp[5, 3, 6, 2]] 
+\end{mmaCell}
+We want to apply a rule
+\begin{mmaCell}{Input}
+    t1 = K /. {Xp[i_, j_, k_, l_] :> Ap[i, j] * p[k, l] + \mmaSup{A}{-1}p[i, l] * p[j, k]}
+\end{mmaCell}
+\begin{mmaCell}{Output}
+    PD[\mmaFrac{p[1,4]*p[3,6]}{A}+Ap[3,1]*p[4,6],Ap[1,5]*p[2,4]+\mmaFrac{p[1,4]*p[5,2]}{A},\mmaFrac{p[3,6]*p[5,2]}{A}+Ap[5,3]*p[6,2]]
+\end{mmaCell}
+which is a rule that tells us how to apply smoothings to a crossing. Each of the two terms refer to one of the two possible smoothings (for a given crossing).
+
+However, there are really $8$ smoothings to the trefoil. Each of these smoothings is obtained by choosing a single term in the three possible expressions above, i.e. this motivates us to apply the distributive property:
+\begin{mmaCell}{Input}
+    Times @@ t1
+\end{mmaCell}
+\begin{mmaCell}{Output}
+    (\mmaFrac{p[1,4]*p[3,6]}{A}+Ap[3,1]*p[4,6])(Ap[1,5]*p[2,4]+\mmaFrac{p[1,4]*p[5,2]}{A})(\mmaFrac{p[3,6]*p[5,2]}{A}+Ap[5,3]*p[6,2])
+\end{mmaCell}
+and calling
+\begin{mmaCell}{Input}
+    t2 = Expand[Times @@ t1]
+\end{mmaCell}
+gives us the sum of eight terms, each of which refers to a given smoothing. However this is messy (such that I won't write it out), but we can apply clever techniques to simplify it. For example,
+\begin{mmaCell}{Input}
+    t3 = t2 //. {p[i_, j_] * p[j_, k_] :> p[i, k]}
+\end{mmaCell}
+which turns two edges joined together into one long edge. This longer edge could possibly be a loop, i.e. the unknot. Therefore, we can simplify it further by replacing this with $d=-A^2-A^{-2}.$
+\begin{mmaCell}{Input}
+    t4 = t3 /. {p[i_, i_] :> (-\mmaSup{-A}{2}-\mmaSup{A}{-2}), \mmaSup{p[i_,j_]}{2} :> (-\mmaSup{A}{2}-\mmaSup{-A}{-2})}
+\end{mmaCell}
+and simplifying it gives
+\begin{mmaCell}{Input}
+    Expand[t4]
+\end{mmaCell}
+\begin{mmaCell}{Output}
+    -\mmaFrac{1}{\mmaSup{A}{9}} + \mmaFrac{1}{A} + \mmaSup{A}{3} + \mmaSup{A}{7}
+\end{mmaCell}
+which gives the Kauffman Bracket of the trefoil.
 \end{document}
