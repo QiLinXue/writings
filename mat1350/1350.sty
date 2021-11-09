@@ -1,0 +1,83 @@
+\usetikzlibrary{shapes,snakes}
+
+\newcommand{\KP}[1]{%
+  \begin{tikzpicture}[baseline=-\dimexpr\fontdimen22\textfont2\relax]
+  #1
+  \end{tikzpicture}%
+}
+\newcommand{\KPA}{%
+  \KP{\filldraw[color=gray, fill=none, thick] circle (0.3);}%
+}
+\newcommand{\KPB}{%
+  \KP{
+    \draw[color=gray,thick] (-0.3,0.3) -- (0.3,-0.3);
+    \draw[color=gray,thick] (-0.3,-0.3) -- (-0.05,-0.05);
+    \draw[color=gray,thick] (0.05,0.05) -- (0.3,0.3);
+  }%
+}
+\newcommand{\KPC}{%
+  \KP{%
+    \draw[color=gray,thick] (-0.3,0.3) .. controls (0,-0.05) .. (0.3,0.3);
+    \draw[color=gray,thick] (-0.3,-0.3) .. controls (0,0.05) .. (0.3,-0.3);
+  }%
+}
+\newcommand{\KPD}{%
+  \KP{%
+    \draw[color=gray,thick] (-0.3,-0.3) .. controls (0.05,0) .. (-0.3,0.3);
+    \draw[color=gray,thick] (0.3,-0.3) .. controls (-0.05,0) .. (0.3,0.3);
+  }%
+}
+
+\newcommand{\hopf}{
+    \begin{tikzpicture}[scale=0.3]
+        \begin{knot}[
+            clip width=3,
+            flip crossing={2},
+            ]
+            \strand [thick, red  ] (1.5,0) circle (1.0cm);
+            \strand [thick, red ] (2.5,0) circle (1.0cm);
+        \end{knot}
+    \end{tikzpicture}
+}
+
+\newcommand{\kinkA}{\hspace{-2mm}
+    \begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)},vertex/.style={anchor=base,
+        circle,fill=black!25,minimum size=18pt,inner sep=2pt}, scale=0.4]
+        \begin{knot}[clip width=3, consider self intersections, end tolerance=1pt]
+            \strand[ultra thick] 
+              (0,0) to[out=up, in=down] (0,0.7) 
+              to[out=up, in=left] (0.5,1.5)
+              to[out=right, in=up]  (1,1)
+              to[out=down, in=right]  (0.5,0.5)
+              to[out=left, in=down]  (0,1.3)
+              to[out=up, in=down]  (0,2);
+          \end{knot}
+          \useasboundingbox (0,0) rectangle (0.5,2);
+    \end{tikzpicture}
+}
+\newcommand{\kinkB}{\hspace{-2mm}
+\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)},vertex/.style={anchor=base,
+    circle,fill=black!25,minimum size=18pt,inner sep=2pt}, scale=0.4]
+    \begin{knot}[clip width=3, consider self intersections, end tolerance=1pt, flip crossing={1}]
+        \strand[ultra thick] 
+          (0,0) to[out=up, in=down] (0,0.7) 
+          to[out=up, in=left] (0.5,1.5)
+          to[out=right, in=up]  (1,1)
+          to[out=down, in=right]  (0.5,0.5)
+          to[out=left, in=down]  (0,1.3)
+          to[out=up, in=down]  (0,2);
+      \end{knot}
+      \useasboundingbox (0,0) rectangle (0.5,2);
+\end{tikzpicture}
+}
+
+\newcommand{\lineknot}{\hspace{2mm}
+\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)},vertex/.style={anchor=base,
+    circle,fill=black!25,minimum size=18pt,inner sep=2pt}, scale=0.4]
+    \begin{knot}[clip width=3, consider self intersections, end tolerance=1pt, flip crossing={1}]
+        \strand[ultra thick] 
+          (0,0) to[out=up, in=down] (0,2);
+      \end{knot}
+      \useasboundingbox (0,0) rectangle (0.5,2);
+\end{tikzpicture}
+}

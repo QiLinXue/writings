@@ -1,0 +1,188 @@
+\documentclass{article}
+\usepackage{qilin}
+\tikzstyle{process} = [rectangle, rounded corners, minimum width=1.5cm, minimum height=0.5cm,align=center, draw=black, fill=gray!30, auto]
+\title{Knot Theory}
+\author{QiLin Xue}
+\date{Fall 2021}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usepackage{stmaryrd}
+\usepackage{accents}
+\newcommand{\ubar}[1]{\underaccent{\bar}{#1}}
+\usepackage{1350}
+\usepackage{tikz}
+\usetikzlibrary{knots} 
+\usepgfmodule{decorations}
+
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\newpage
+\section{Introduction to Knots: Reidemeister moves, 3-colourings}
+Knot theory is the study of knots. Specifically, we are interested in answering questions about the properties of knots and whether two knots are equivalent, i.e. can we deform the left knot (the \emf{trefoil}) to get to the right knot (the \emf{unknot})?
+\begin{center}
+    \hspace{-10mm}
+    \begin{tikzpicture}
+        \begin{knot}[
+            clip width=10,
+            consider self intersections
+        ]
+            \strand[red,thick] (90:1)
+                \foreach \x in {1,2,3} {
+                    to [bend left=117,looseness=1.9] ({90+120*\x}:1)
+                }
+            ;
+            \flipcrossings{1,3}
+            \strand[red,thick] (3,0) circle[radius=0.8];
+        \end{knot}
+    \end{tikzpicture}
+\end{center}\vspace{-6mm}
+Why do we care? Apart from being a party trick, knot theory has applications in topology, combinatorics, homological algebra, representation theory, algebraic topology, differential geometry, quantum field theory, computer algebra, and more.
+
+It turns out the above two knots are not equivalent. While it may be easy to see so intuitively, it's not always the case. For example, the \emf{Perko Pair}
+\begin{center}
+    \includegraphics[width=0.3\linewidth]{figures/perko.png}
+\end{center}
+were thought to be distinct for a very long time, but they are actually equivalent. We will define a knot very loosely using combinatorics:
+\begin{definition}
+    A knot can be represented by a quadrivalent graph (with the exception of the unknot) using a knot diagram, such as the ones illustrated above. 
+\end{definition}
+The reason we don't give the formal definition is that it uses topological maps (and there are multiple equivalent definitions), which causes it to get very ugly fast. We will revisit this formal definition in a later section.
+\subsection{Reidemeister Moves}
+The Reidemeister moves are a set of moves that can be applied to a knot to make it equivalent to another knot. The moves are defined as follows:
+\begin{center}
+    \includegraphics[width=0.4\linewidth]{figures/reidemeister.jpg}
+\end{center}
+The first Reidemeister move, $R1$ tells us that we can untwist a \emf{kink}. The second $R2$ talks about poking/unpoking, and the third talks about sliding.
+
+We will state (but not yet prove) the following properties of the Reidemeister moves:
+\begin{theorem}
+    The set of knots is equivalent to the set of knot diagrams modulo the Reidemeister moves.
+    \begin{equation}
+        \{\text{knots}\} = \frac{\{\text{knot diagrams}\}}{\{\text{Reidemeister moves}\}}
+    \end{equation}
+\end{theorem}
+To prove that two knots are equivalent, we need to find a sequence Reidemeister moves to transform one knot into the other. However, this can often be tricky (since there can be an infinite combination of moves) so if two knots are different, we cannot show they are different by ``failing'' to find a sequence of moves.
+
+As a result, we will need another tool, known as \emf{invariants.}
+\subsection{3-Colouring Knot Invariant}
+\begin{definition}
+    A function on the set of knot diagrams with values that are easily computable (i.e. with values in $\mathbb{Z}$, polynomials, matrices, etc.) and that does not change if you perform $R$-moves are known as \emf{invariants.}
+\end{definition}
+There are several knot invariants but we will only consider the number of \emf{3-colourings} of the knot.
+\begin{definition}
+    A 3-colouring is an assignment of colours $\{R,G,B\}$ to the arcs of the knot. A \emf{legit} 3-colouring is when only $1$ or $3$ colours are used. We will let $\lambda$ denote the number of legit 3-colourings.
+\end{definition}
+For example, the following is an example of a 3-colouring. Note that not every colour needs to be used.
+\begin{center}
+    \includegraphics[width=0.2\linewidth]{figures/trefoil_3color.png}
+\end{center}
+\begin{theorem}
+        The number of 3-colourings of a knot is an invariant.
+\end{theorem}
+\begin{proof}
+    We simply need to establish a bijection between the number of legit 3-colourings in the left hand and right hand sides of the Reidemeister moves.
+    \begin{center}
+        \includegraphics[width=0.4\linewidth]{figures/reidemeister_3coloring.png}
+    \end{center}
+    \vspace{-6mm}
+\end{proof}
+\begin{example}
+    Let us compare the trefoil knot to the unknot. There are three arcs in the trefoil knot. It turns out that the color of the third arc is completely determined by the color of the first two arcs, which are independent to each other.
+    \vspace{2mm}
+
+    On the other hand, the unknot only has three legit 3-colourings. Therefore $\lambda(\text{trefoil}) = 9$, $\lambda(\text{unknot}) = 3$, so these two knots are not equivalent.
+\end{example}
+\section{The Kauffman Bracket}
+There are two annoying issues with the 3-colouring knot invariant. If $D$ is a knot diagram:
+\begin{itemize}
+    \item $\lambda(D)$ is often $3$ or $9$ (and occasionally $27$) for simple knots. This means that oftentimes, different knots will have the same $\lambda$.
+    \item If the knot is very complex, it may be very difficult to compute $\lambda(D).$
+\end{itemize}
+Therefore, we wish to find a better way of doing things.
+\begin{definition}
+    We introduce the \emf{Kauffman bracket} $\langle D\rangle$ from two axioms:
+    \begin{enumerate}
+        %the first rule
+        \item $\left\langle\KPA D\right\rangle=d\langle D\rangle$
+        
+        \item $\left\langle\KPB\right\rangle=
+        A\left\langle\KPD\right\rangle + B \left\langle \KPC \right\rangle$
+    \end{enumerate}
+    where $\left\langle\KPD\right\rangle$ is known as the \emf{0-smoothing} and $\left\langle \KPC\right\rangle$ is known as the \emf{1-smoothing}. We can imagine the ends of the bracket as being the two ends of the knot (where the bottom two vertices of each diagram are connected.)
+\end{definition}
+For example, consider a \emf{link} (which we will not precisely define), known as the \emf{Hopf Link}:
+\begin{center}
+    \begin{tikzpicture}[scale=0.5]
+        \begin{knot}[
+            clip width=5,
+            flip crossing={1},
+            ]
+            \strand [thick, red  ] (1.5,0) circle (1.0cm);
+            \strand [thick, red ] (2.5,0) circle (1.0cm);
+        \end{knot}
+    \end{tikzpicture}
+\end{center}
+We can apply two successive smoothings to this link to get the following (ignore the mapping names):
+\begin{center}
+    \includegraphics[width=0.5\linewidth]{figures/hopf_link_bracket.png}
+\end{center}
+so
+\begin{align}
+    \langle H\rangle &= A^2\langle H_4\rangle + AB\langle H_3\rangle + AB\langle H_2\rangle + B^2 \langle H_1\rangle \\ 
+    &= A^2d^2 + 2ABd + B^2d^2
+\end{align}
+\begin{theorem}
+    Let $B=A^{-1}$ and let $d=-A^2-A^{-2}.$ Then $\langle D\rangle$ is an invariant for $R2$ and $R3$.
+\end{theorem}
+\begin{proof}
+    We want to show that the $R2$ move is invariant. To do so, we simple compute it in a similar way above, and we get a system of two equations:
+    \begin{align}
+        AB &= 1 \\ 
+        A^2+B^2 + ABd &= 1
+    \end{align}
+    which after solving gives the necessary conditions in the theorem. Then, using these relationships, we can show that the $R3$ move is invariant also. It may seem difficult to compute as there are now three crossings, but after simplifying a single crossing, we can relate it back to the $R2$ case which we have solved.
+\end{proof}
+However, if we try to compute $R1$, it turns out that
+\begin{equation}
+    \left\langle \kinkA \right\rangle = (-A^3) \left\langle \lineknot\right \rangle
+\end{equation}
+so it seems like $\langle D\rangle$ is not an invariant in general. However, as with many other concepts in knot theory, if something doesn't behave as expected for $R1$, there are often ways to circumvent it. The idea is that there are variants of the $R1$ move. For example, we have
+\begin{equation}
+    \left\langle \kinkB \right\rangle = (-A^{-3}) \left\langle \lineknot\right \rangle
+\end{equation}
+Using this, we can define the \emf{writhe} of a knot diagram as
+\begin{definition}
+    The writhe $w$ is defined as
+    \begin{equation}
+        w(D) = \sum_\text{crossings $x\in D$} \text{sign}(x)
+    \end{equation} 
+    where crossings now have orientations. We define them such that
+    \begin{center}
+        \begin{tikzpicture}
+            \draw[color=gray,thick,<-] (-0.3,0.3) -- (0.3,-0.3);
+            \draw[color=gray,thick,<-] (-0.3,-0.3) -- (-0.05,-0.05);
+            \draw[color=gray,thick] (0.05,0.05) -- (0.3,0.3);
+        \end{tikzpicture}
+    \end{center}
+    has positive sign and
+    \begin{center}
+        \begin{tikzpicture}
+            \draw[color=gray,thick,<-] (-0.3,0.3) -- (0.3,-0.3);
+            \draw[color=gray,thick] (-0.3,-0.3) -- (-0.05,-0.05);
+            \draw[color=gray,thick,->] (0.05,0.05) -- (0.3,0.3);
+        \end{tikzpicture}
+    \end{center}
+    has negative sign. We can remember using the \emf{right-hand rule.} Point your thumb towards the direction of one arrow and curl your fingers. If your fingers point in the direction of the other arrow, then its positive. Otherwise, its negative. 
+\end{definition}
+\begin{theorem}
+    The writhe of a knot diagram is invariant under the $R2$ and $R3$ moves.
+\end{theorem}
+\begin{proof}
+    We can show that the writhe is not affected by $R2$ and $R3$ moves by showing that for any arrows we draw, the writhe of the left hand and the right hand side are the same. In fact, this should be very easy to see even without drawing arrows.
+\end{proof}
+We now have two quantities that are \textit{almost} invariants. We will see in the next section how we can combine these two quantities to get an actual \textit{invariant} that will be more helpful.
+\end{document}
